@@ -1,8 +1,5 @@
 class Solution:
     def getDescentPeriods(self, prices: List[int]) -> int:
-        a = len(prices)
-        if a == 1:
-            return a
 
         streak = 1
         total = 1
