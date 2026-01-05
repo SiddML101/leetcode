@@ -12,7 +12,6 @@ class Solution:
 
         sum = 0
 
-        # even negatives → all abs
         if count % 2 == 0:
             for i in range(rows):
                 for j in range(cols):
