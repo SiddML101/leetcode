@@ -3,14 +3,12 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        a = 0
-        b = len(s) - 1
-        temp = 0
-        while a <= b:
-            temp = s[a]
-            s[a] = s[b]
-            s[b] = temp
-            a += 1
-            b -= 1
+        def helper(left,right):
+            if left >= right:
+                return
 
-        return s
+            s[left], s[right] = s[right], s[left]
+
+            helper(left+1,right-1)
+
+        helper(0, len(s)-1)
