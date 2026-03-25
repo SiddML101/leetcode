@@ -1,9 +1,8 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n == 0:
-            return n
-        elif n == 1 or n == 2:
-            return 1
-        else:
-            return self.fib(n-1) + self.fib(n-2)
-    
+        def f(n):
+            if n <= 1:
+                return n
+            return f(n-1) + f(n-2)
+        return f(n)
+        
