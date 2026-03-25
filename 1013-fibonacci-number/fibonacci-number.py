@@ -1,15 +1,17 @@
 class Solution:
     def fib(self, n: int) -> int:
-        dp = [-1] * (n+1)
-        
-        def f(n):
-            if n <= 1:
-                return n
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
 
-            if dp[n] != -1:
-                return dp[n]
+        prev2 = 0
+        prev1 = 1
+        a = 0
+        for i in range (2,n+1):
+            a = prev2 + prev1
+            prev2 = prev1
+            prev1 = a
 
-            dp[n] = f(n-1) + f(n-2)
-            return dp[n]
-
-        return f(n)
+        return a
+            
