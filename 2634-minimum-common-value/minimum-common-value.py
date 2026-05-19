@@ -1,21 +1,20 @@
 class Solution:
     def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
-        hash_map = {}
-        for i in range (len(nums1)):
-            if nums1[i] not in hash_map:
-                hash_map[nums1[i]] = 1
+        i,j = 0,0
 
-            else:
-                hash_map[nums1[i]] += 1
-        
-        nums3 = []
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] == nums2[j]:
+                return nums1[i]
+            if nums1[i] > nums2[j]:
+                if j+1 < len(nums2):
+                    j+=1
+                else:
+                    break
+            if nums1[i] < nums2[j]:
+                if i+1 < len(nums1):
+                    i+=1
+                else: 
+                    break
 
-        for i in range (len(nums2)):
-            if nums2[i] in hash_map:
-                nums3.append(nums2[i])
-
-        if len(nums3) == 0:
-            return -1
-
-        return nums3[0]
+        return -1
         
