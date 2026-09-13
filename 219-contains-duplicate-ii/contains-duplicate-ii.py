@@ -12,8 +12,7 @@ class Solution:
         for j in range(k + 1, len(nums)):
             if hash_map[nums[i]] == 1:
                 del hash_map[nums[i]]
-            else:
-                hash_map[nums[i]] -= 1
+           
 
             i += 1
 
