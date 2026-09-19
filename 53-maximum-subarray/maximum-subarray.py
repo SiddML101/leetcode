@@ -1,19 +1,10 @@
 class Solution:
     def maxSubArray(self, nums: list[int]) -> int:
-        i, j = 0, 0
-        s1 = 0
-        s2 = nums[0]
+        current = nums[0]
+        maximum = nums[0]
 
-        while j < len(nums):
-            s1 += nums[j]
+        for i in range(1, len(nums)):
+            current = max(nums[i], current + nums[i])
+            maximum = max(maximum, current)
 
-            s2 = max(s2, s1)
-
-            if s1 < 0:
-                i = j + 1
-                j = i
-                s1 = 0
-            else:
-                j += 1
-
-        return s2
+        return maximum
