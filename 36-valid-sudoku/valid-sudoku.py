@@ -12,22 +12,22 @@ class Solution:
                     return False
                 
         for i in range (c):
-            hashmap2 = {}
+            hashmap1 = {}
             for j in range (r): 
-                if board[j][i] not in hashmap2 and board[j][i] != ".":
-                    hashmap2[board[j][i]] = 1
-                elif board[j][i] in hashmap2:
+                if board[j][i] not in hashmap1 and board[j][i] != ".":
+                    hashmap1[board[j][i]] = 1
+                elif board[j][i] in hashmap1:
                     return False
 
         for i in range (0,9,3):
             for j in range (0,9,3):
-                hashmap3 = {}    
+                hashmap1 = {}    
 
                 for x in range (i,i+3):
                     for y in range (j,j+3):
-                        if board[x][y] not in hashmap3 and board[x][y] != ".":
-                            hashmap3[board[x][y]] = 1
-                        elif board[x][y] in hashmap3:
+                        if board[x][y] not in hashmap1 and board[x][y] != ".":
+                            hashmap1[board[x][y]] = 1
+                        elif board[x][y] in hashmap1:
                             return False
 
 
